@@ -1,5 +1,11 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import Search from './componets/Search';
+import LocationButton from './componets/LocationButton';
+import WeatherInfo from './componets/WeatherInfo';
+import { SearchIcon } from 'lucide-react';
+import './App.css';
+import Image from './assets/img/background.jpg';
 
 // API Weather
 const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather?';
@@ -59,6 +65,7 @@ function App() {
 						lat: res.data.coord.lat,
 						lon: res.data.coord.lon,
 					},
+					icon: res.data.weather[0].icon,
 				});
 			})
 			.catch((err) => {
@@ -74,56 +81,45 @@ function App() {
 		setCoords({ lat: 0, lon: 0 });
 		setValue('');
 	};
-	const HanddleLocation = () => {
-		if (navigator.geolocation) {
-			function success({ coords }) {
- 
-	setCoords({ lat: coords.latitude, lon: coords.longitude });
-}
-
-function error(err) {
-  console.log('el usuario no acepto', err)
-	setError('No se pudo obtener la ubicacion');
-}
-			navigator.geolocation.getCurrentPosition(success, error);
-		} else {
-			setError('Tu navegador no soporta geolocalizacion');
-		}
-	}
+const urlImage = `url(${Image})`;
 	// Main
 	return (
-		<div>
-			<h1>Weather App</h1>
-			<div style ={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-				{/* Buscador por Pais */}
-				<form onSubmit={HanddleSubmit}>
-					<input
-						type="text"
-						value={value}
-						onChange={(e) => setValue(e.target.value)}
-					/>
-				</form>
-				<button type='button' onClick={HanddleLocation}>ubicacion</button>
+		<div className="container"
+				style={{
+				backgroundImage: urlImage,
+				backgroundSize: 'cover',
+				backgroundPosition: 'center',
+				height: '100%',
+				display: 'flex',
+				justifyContent: 'center',
+				alignItems: 'center',
+				
+				backgroundAttachment: 'fixed',
+				filter: 'blur(0px)',
+				
+				
+				}}
+>
+			<div className="card">
+				<h1>Estadisticas del Clima</h1>
+				<div className="card__header">
+					{
+						<Search
+							HanddleSubmit={HanddleSubmit}
+							value={value}
+							setValue={setValue}
+						/>
+					}
+					<LocationButton setCoords={setCoords} setError={setError} />
+				</div>
+				<div className='card__body'>
+				{error && <p> {error} </p>}
+				{weather && <WeatherInfo weather={weather} />}
+				
+				</div>
 			</div>
-			{error && <p> {error} </p>}
-
-			{/* Informacion del estado del clima */}
-
-			{weather && (
-				<>
-					<h3>
-						{weather.name},<span>{weather.county}</span>
-					</h3>
-					<p>Temperatura: {weather.temp}°C</p>
-					<p>Humedad: {weather.humidity}%</p>
-					<p>Viento: {weather.wind} m/s</p>
-					<p>
-						Coordenadas: {weather.lat} {weather.lon}
-					</p>
-					<p>Descripción: {weather.weather}</p>
-				</>
-			)}
 		</div>
 	);
 }
 export default App;
+SearchIcon

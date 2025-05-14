@@ -1,0 +1,48 @@
+.card__info {
+	text-align: center;
+}
+.card__title {
+	font-size: 30px;
+}
+.card_spam {
+	font-family:'Courier New', Courier, monospace;
+}
+.card__icon {
+	width: 30px;
+}
+
+.card__img {
+  width: 200px;
+  height: 200px;
+  padding: 0;
+  margin: 0;
+}
+.card__temp {
+  font-size: 38px;
+  margin: 0;
+  padding: 0;
+}
+.card__details {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+.card__details__item {
+  display: flex;
+  gap: 8px;
+}
+.card__details__text{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.card__details__item_value {
+  font-size: small;
+  color: #fff;  
+}
+.icon {
+  width: 20px; 
+  
+}

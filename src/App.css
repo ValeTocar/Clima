@@ -1,0 +1,29 @@
+.container {
+  /* Add your styles here */
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  color: #000000
+}
+
+.card {
+  /* Add your styles here */
+  background: blur(10px) rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  max-width: 400px;
+  padding: 25px;
+  width: 85%;
+}
+
+.card__header {
+  /* Add your styles here */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card__body {
+  /* Add your styles here */
+}
