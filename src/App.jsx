@@ -5,7 +5,7 @@ import LocationButton from './componets/LocationButton';
 import WeatherInfo from './componets/WeatherInfo';
 import { SearchIcon } from 'lucide-react';
 import './App.css';
-import Image from './assets/img/background.jpg';
+import Image from './assets/img/clima.webp';
 
 // API Weather
 const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather?';
