@@ -17,10 +17,16 @@
 }
 .search__icon {
   width: 22px;
+	color: #fff;
 }
 input.search__input {
 	background-color: transparent;
 	border: none;
 	outline: none;
 	color: #fff;
+}
+input.search__input::placeholder {
+	color: #ccc;
+	font-weight: 800;
+	font-family: 'Times New Roman', Times, serif;
 }

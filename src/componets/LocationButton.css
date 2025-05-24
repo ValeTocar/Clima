@@ -4,7 +4,7 @@
 	padding: 0.6em 1.2em;
 	font-size: 1em;
 	font-weight: 500;
-	background-color: #0d479e;
+	background-color: #09316d;
 	cursor: pointer;
 	transition: border-color 0.25s;
 }
@@ -16,4 +16,5 @@
 }
 .location {
   width: 30px;
+	color: #ffffff;
 }

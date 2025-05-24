@@ -101,7 +101,7 @@ const urlImage = `url(${Image})`;
 				}}
 >
 			<div className="card">
-				<h1>Estadisticas del Clima</h1>
+				<h1 className='title'>Estadisticas del Clima</h1>
 				<div className="card__header">
 					{
 						<Search

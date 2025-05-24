@@ -13,7 +13,7 @@ function WeatherInfo({ weather }) {
 		<div className="card__info">
 			{weather && (
 				<div className="card__contenido">
-					<h2 card__title>
+					<h2 className='card__title' >
 						<MapPin className="card__icon" />
 						{weather.name},<span className="card_spam">{weather.county}</span>
 					</h2>
