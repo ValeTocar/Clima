@@ -38,6 +38,7 @@
 @media screen and (max-width: 768px) {
 	.container {
 		min-height: 100vh;
+		width: 100%;
 	}
 	.card {
 		width: 90%;
